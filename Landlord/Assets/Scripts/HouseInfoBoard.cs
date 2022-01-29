@@ -9,7 +9,6 @@ public class HouseInfoBoard : MonoBehaviour
     [Range(0, 10)]public int levelVal;
     public Image levelFillImg;
     public bool isLocked;
-    public bool canUpdate;
     public int cost;
     public GameObject lockMask;
     public Sprite lightStar, darkStar;
@@ -20,7 +19,6 @@ public class HouseInfoBoard : MonoBehaviour
     public Text costText;
 
     private static string LOCKED_TITLE = "LOCKED";
-    private static string UNLOCKED_TITLE = "BUY";
     private static string UPGRADE_TITLE = "UPGRADE";
     
     private Color color1 = Color.white;
@@ -42,19 +40,10 @@ public class HouseInfoBoard : MonoBehaviour
             costText.color = color1;
             lockMask.SetActive(true);
         }
-        else if (canUpdate)
-        {
-            star.sprite = lightStar;
-            statusTitleText.text = UPGRADE_TITLE;
-            statusTitleText.color = color2;
-            costText.text = HandleCost(cost);
-            costText.color = color2;
-            lockMask.SetActive(false);
-        }
         else
         {
             star.sprite = lightStar;
-            statusTitleText.text = UNLOCKED_TITLE;
+            statusTitleText.text = UPGRADE_TITLE;
             statusTitleText.color = color2;
             costText.text = HandleCost(cost);
             costText.color = color2;
