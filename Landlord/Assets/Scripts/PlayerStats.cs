@@ -13,17 +13,18 @@ public static class PlayerStats
 
    public static void updateMonthlyBalance() {
        for (int i = 0; i < apartments.Length; i++) {
-           balance += apartments.rent;
+           balance += apartments[i].rent;
        }
    }
 
-   public static void updateMonthlyHappiness() {
+   public static void updateMonthlyReputation() {
+       if (renters.Length ==0 ) return;
+
        int temp = 0;
        for (int i = 0; i < renters.Length; i++) {
-           temp += renters.happiness;
+           temp += renters[i].happiness;
        }
 
-       
        reputation = temp/renters.Length > 0 ? temp/renters.Length : 0; 
    }
 }

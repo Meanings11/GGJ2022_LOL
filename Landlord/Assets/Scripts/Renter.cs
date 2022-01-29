@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Renter : MonoBehaviour
 {
-    int happiness;
+    public int happiness;
     // Start is called before the first frame update
     void Start()
     {
