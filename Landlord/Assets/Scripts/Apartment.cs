@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//go to next turn, update UI
-public class GameManager : MonoBehaviour { 
+public class Apartment : MonoBehaviour
+{
+    public int rent = 0;
+    public int level = 1;
+    public int buildingCost = 1000;
+    public int nxtUpgradeCost = 1000;
+    public int maintFee = 300;
+
     // Start is called before the first frame update
     void Start()
     {
