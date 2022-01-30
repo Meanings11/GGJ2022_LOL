@@ -11270,6 +11270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask: {fileID: 729205780}
   Renter: {fileID: 0}
+  name: {fileID: 1133438057}
   confirmationCanvasGroup: {fileID: 1203957135}
   selfCanvasGroup: {fileID: 1892890724}
 --- !u!224 &771126920 stripped
@@ -20558,8 +20559,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balance: 0
   reputation: 0
-  apartments: []
-  renters: []
+  apartments:
+  - {fileID: 1882513723}
+  renterNum: 0
+  firstHouse: {fileID: 1167136165}
 --- !u!4 &951759665
 Transform:
   m_ObjectHideFlags: 0
@@ -20869,6 +20872,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063680669}
   m_CullTransparentMesh: 1
+--- !u!1 &1119121144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119121146}
+  - component: {fileID: 1119121145}
+  m_Layer: 0
+  m_Name: Renter Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1119121145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119121144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548918974520c5e44aceed3bdac2b6c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabRenter: {fileID: 4470887846569098349, guid: e6c9fa84d4ff6b345a6cfa6283fa4fad, type: 3}
+  gameManager: {fileID: 951759664}
+  renter: {fileID: 0}
+  nameArray:
+  - Liam
+  - Olivia
+  - Noah
+  - Emma
+  - Oliver
+  - Ava
+  - Elijah
+  - Charlotte
+  - William
+  - Sophia
+  - James
+  - Amelia
+  - Benjamin
+  - Isabella
+  - Lucas
+  - Mia
+  - Henry
+  - Evelyn
+  - Alexander
+  - Harper
+  - Robert
+  - John
+  - Michael
+  - Mary
+  - Patricia
+  - Linda
+  - Elizabeth
+  - Barbara
+--- !u!4 &1119121146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119121144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: -4.6000004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119398787
 GameObject:
   m_ObjectHideFlags: 0
@@ -21149,6 +21227,11 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!1 &1167136165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7989961138768226576, guid: 928bc8363795b4c478a17deff6510189, type: 3}
+  m_PrefabInstance: {fileID: 1467382495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182566191
 GameObject:
   m_ObjectHideFlags: 0
@@ -22292,6 +22375,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1361422275}
     m_Modifications:
+    - target: {fileID: -2774966602513775821, guid: 928bc8363795b4c478a17deff6510189, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 268801376291979432, guid: 928bc8363795b4c478a17deff6510189, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -24489,7 +24576,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -2774966602513775821, guid: 928bc8363795b4c478a17deff6510189, type: 3}
   m_PrefabInstance: {fileID: 1467382495}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1167136165}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f480cb57ac06341edaf543093908f41c, type: 3}

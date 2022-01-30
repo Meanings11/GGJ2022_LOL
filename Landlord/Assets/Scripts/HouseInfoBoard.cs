@@ -41,8 +41,8 @@ public class HouseInfoBoard : MonoBehaviour
             star.sprite = starImages[matchedApt.level];
         }
 
-        rentText.text = Utils.HandleMoney(matchedApt.rent);
-        costText.text = Utils.HandleMoney(matchedApt.nxtUpgradeCost);
+        rentText.text = "$" + Utils.HandleMoney(matchedApt.rent);
+        costText.text = "$" + Utils.HandleMoney(matchedApt.nxtUpgradeCost);
 
         increaseBtn.interactable = matchedApt.level != 0;
         decreaseBtn.interactable = matchedApt.level != 0;
@@ -57,7 +57,7 @@ public class HouseInfoBoard : MonoBehaviour
         else if (matchedApt.level == 3)
         {
             statusTitleText.gameObject.SetActive(false);
-            costText.text = "FINISHED!";
+            costText.text = "Highest!";
             costText.color = color3;
         }
         else

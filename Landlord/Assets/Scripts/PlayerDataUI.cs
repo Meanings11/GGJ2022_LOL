@@ -14,6 +14,6 @@ public class PlayerDataUI : MonoBehaviour
 		balance.text = Utils.HandleMoney(GameManager.instance.balance);
 		reputation.text = GameManager.instance.reputation.ToString() + "%";
 		propertyCnt.text = GameManager.instance.apartments.Count.ToString();
-		renterCnt.text = GameManager.instance.renters.Count.ToString();
+		renterCnt.text = GameManager.instance.renterNum.ToString();
 	}
 }
