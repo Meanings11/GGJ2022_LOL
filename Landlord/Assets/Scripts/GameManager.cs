@@ -37,9 +37,15 @@ public class GameManager : MonoBehaviour {
     {
     }
 
+    public void enterNewMonth(){
+        updateMonthlyBalance();
+        updateMonthlyReputation();
+    }
+
     public void updateMonthlyBalance() {
         for (int i = 0; i < apartments.Count; i++) {
             balance += apartments[i].rent;
+            balance -= apartments[i].maintFee;
         }
    }
 
