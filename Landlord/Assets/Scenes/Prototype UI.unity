@@ -269,6 +269,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 828856076}
     m_Modifications:
+    - target: {fileID: 5611543981646693267, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
+    - target: {fileID: 5611543982419750519, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     - target: {fileID: 5611543983105704968, guid: 7fac0acf611264a56927996e9711f091, type: 3}
       propertyPath: m_Name
       value: info_item (1)
@@ -642,7 +650,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a2ad133b1e0434711909e713d60b2f9d, type: 3}
+    m_Font: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -956,7 +964,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a2ad133b1e0434711909e713d60b2f9d, type: 3}
+    m_Font: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 1
@@ -1203,6 +1211,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 828856076}
     m_Modifications:
+    - target: {fileID: 5611543981646693267, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
+    - target: {fileID: 5611543982419750519, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     - target: {fileID: 5611543983105704968, guid: 7fac0acf611264a56927996e9711f091, type: 3}
       propertyPath: m_Name
       value: info_item (3)
@@ -1838,7 +1854,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a2ad133b1e0434711909e713d60b2f9d, type: 3}
+    m_Font: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -2524,7 +2540,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a2ad133b1e0434711909e713d60b2f9d, type: 3}
+    m_Font: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 1
@@ -2552,6 +2568,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 828856076}
     m_Modifications:
+    - target: {fileID: 5611543981646693267, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
+    - target: {fileID: 5611543982419750519, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     - target: {fileID: 5611543983105704968, guid: 7fac0acf611264a56927996e9711f091, type: 3}
       propertyPath: m_Name
       value: info_item (2)
@@ -2873,6 +2897,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 828856076}
     m_Modifications:
+    - target: {fileID: 5611543981646693267, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
+    - target: {fileID: 5611543982419750519, guid: 7fac0acf611264a56927996e9711f091, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ad471152f79ee47dbad90e49081274b7, type: 3}
     - target: {fileID: 5611543983105704968, guid: 7fac0acf611264a56927996e9711f091, type: 3}
       propertyPath: m_Name
       value: info_item
