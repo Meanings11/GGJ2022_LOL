@@ -18,6 +18,7 @@ public class Apartment : MonoBehaviour
     public Sprite floor1;
     public Sprite floor2;
     public Sprite floor3;
+    public GameObject upgradeEffect;
 
     public bool upgrade() {
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
@@ -27,6 +28,7 @@ public class Apartment : MonoBehaviour
         value = Helper.roundToTen((nxtUpgradeCost/10 + maintFee) * 1.25);
         nxtUpgradeCost = Helper.roundToTen(nxtUpgradeCost*Math.Exp(0.5));
         updateSprite();
+        invokeEffect();
         return true;
     }
 
@@ -38,6 +40,12 @@ public class Apartment : MonoBehaviour
         } else if (level >= 3) {
             spriteRenderer.sprite = floor3;
         }
+    }
+
+    public void invokeEffect(){
+        upgradeEffect = Instantiate(upgradeEffect);
+
+        // Destroy(upgradeEffect, 0.5f);
     }
 
     // Start is called before the first frame update

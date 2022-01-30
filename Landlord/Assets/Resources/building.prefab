@@ -99,6 +99,9 @@ MonoBehaviour:
   nxtUpgradeCost: 1000
   maintFee: 300
   value: 500
+  occupied: 0
+  renter: {fileID: 0}
   floor1: {fileID: 21300000, guid: cd04090a5f6374d00a2a5470acb41249, type: 3}
   floor2: {fileID: 21300000, guid: 1424c932c49a5453e9ee992e1e33b896, type: 3}
   floor3: {fileID: 21300000, guid: ce8e8ffac44c845b6ae3466eed90756c, type: 3}
+  upgradeEffect: {fileID: 5873242897793518082, guid: 8d812b0129d304cce9bbed740cf29402, type: 3}
