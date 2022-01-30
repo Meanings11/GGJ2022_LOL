@@ -1,11 +1,14 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
 public class RenterEvictButton : MonoBehaviour
 {
     public Image mask;
     public GameObject Renter;
+
+    public Text name;
 
     public CanvasGroup confirmationCanvasGroup;
     public CanvasGroup selfCanvasGroup;
@@ -21,6 +24,7 @@ public class RenterEvictButton : MonoBehaviour
     public void OpenPopup()
     {
         mask.color = new Color(0f, 0f, 0f, 0.5f);
+        name.text = Renter.GetComponent<Renter>().name;
         PopupWindow(selfCanvasGroup);
     }
 

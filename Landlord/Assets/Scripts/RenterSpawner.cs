@@ -35,7 +35,7 @@ public class RenterSpawner : MonoBehaviour
 
     public void spawn(Apartment ap)
     {
-        renter = Instantiate(prefabRenter);
+        renter = Instantiate(prefabRenter, transform);
         renter.updateExpectedRent(ap.value);
         renter.updateHappiness(ap.rent);
         int possibility = Random.Range(1, 101);

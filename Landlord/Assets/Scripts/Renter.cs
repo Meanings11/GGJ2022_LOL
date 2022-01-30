@@ -6,6 +6,8 @@ public class Renter : MonoBehaviour
 {
     public int happiness;
     public int expectRent;
+
+    public string name;
     // Start is called before the first frame update
 
     // private float time;

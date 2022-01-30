@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour {
         apartments = new List<Apartment>();
         // renters = new List<Renter>();
 
-        addApartment(firstHouse);
     }
 
     public void enterNewMonth(){

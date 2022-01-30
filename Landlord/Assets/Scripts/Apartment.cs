@@ -30,7 +30,10 @@ public class Apartment : MonoBehaviour
         updateSprite();
         invokeEffect();
 
-        renter.updateExpectedRent(value);
+        if (renter != null)
+        {
+            renter.updateExpectedRent(value);
+        }
     }
 
     private void updateSprite(){
