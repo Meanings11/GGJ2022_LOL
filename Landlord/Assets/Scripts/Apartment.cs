@@ -25,8 +25,8 @@ public class Apartment : MonoBehaviour
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
         level++;
         maintFee = Helper.roundToTen(maintFee*Math.Exp(0.3));
-        value = Helper.roundToTen((nxtUpgradeCost/10 + maintFee) * 1.25);
         nxtUpgradeCost = Helper.roundToTen(nxtUpgradeCost*Math.Exp(0.5));
+        value = Helper.roundToTen((nxtUpgradeCost/10 + maintFee) * 1.25);
         updateSprite();
         invokeEffect();
 
