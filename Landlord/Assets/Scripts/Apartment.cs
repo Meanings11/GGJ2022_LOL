@@ -10,6 +10,8 @@ public class Apartment : MonoBehaviour
     public int nxtUpgradeCost = 1000;
     public int maintFee = 300;
     public int value = 500;
+    public bool occupied = false;
+    public Renter renter;
 
     SpriteRenderer spriteRenderer;
 
@@ -43,6 +45,7 @@ public class Apartment : MonoBehaviour
     {
         rent = 0;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        occupied = false;
     }
 
     // Update is called once per frame
