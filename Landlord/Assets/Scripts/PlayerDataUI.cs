@@ -11,9 +11,9 @@ public class PlayerDataUI : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		balance.text = Utils.HandleMoney(PlayerStats.balance);
-		reputation.text = PlayerStats.reputation.ToString();
-		// propertyCnt.text = PlayerStats.apartments.Length.ToString();
-		// renterCnt.text = PlayerStats.renters.Length.ToString();
+		balance.text = Utils.HandleMoney(GameManager.instance.balance);
+		reputation.text = GameManager.instance.reputation.ToString() + "%";
+		propertyCnt.text = GameManager.instance.apartments.Count.ToString();
+		renterCnt.text = GameManager.instance.renters.Count.ToString();
 	}
 }
