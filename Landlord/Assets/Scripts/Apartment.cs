@@ -22,7 +22,8 @@ public class Apartment : MonoBehaviour
     private GameObject effectObj;
 
     public void upgrade() {
-        // if (PlayerStats.balance < nxtUpgradeCost) return false;
+        if (GameManager.instance.balance < nxtUpgradeCost) return;
+        GameManager.instance.balance -= nxtUpgradeCost;
         level++;
         maintFee = Helper.roundToTen(maintFee*Math.Exp(0.3));
         nxtUpgradeCost = Helper.roundToTen(nxtUpgradeCost*Math.Exp(0.5));
