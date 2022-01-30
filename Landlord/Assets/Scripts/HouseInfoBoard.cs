@@ -1,20 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HouseInfoBoard : MonoBehaviour
 {
-    [Range(0, 10)]public int levelVal;
-    public Image levelFillImg;
-    public bool isLocked;
+    // level
+    public Sprite[] starImages;
+    public Image star;
+    public int level = 0;
+    public bool isLocked = true;
     public int cost;
     public GameObject lockMask;
-    public Sprite lightStar, darkStar;
-    public Image star;
     
-    
+    private int rentVal = 0;
+    public Button increaseBtn, decreaseBtn;
+
+    public Text rentText;
     public Text statusTitleText;
     public Text costText;
 
@@ -23,51 +23,56 @@ public class HouseInfoBoard : MonoBehaviour
     
     private Color color1 = Color.white;
     private Color color2 = new Color(0.196f, 0.196f, 0.196f);
-
-    private void Start()
-    {
-        levelFillImg.fillAmount = 0f;
-    }
-
+    
     private void FixedUpdate()
     {
+        star.sprite = starImages[level];
+        
+        rentText.text = Utils.HandleMoney(rentVal);
+        costText.text = Utils.HandleMoney(cost);
+
+        increaseBtn.interactable = !isLocked;
+        decreaseBtn.interactable = !isLocked;
+
+        lockMask.SetActive(isLocked);
+        
         if (isLocked)
         {
-            star.sprite = darkStar;
             statusTitleText.text = LOCKED_TITLE;
             statusTitleText.color = color1;
-            costText.text = HandleCost(cost);
             costText.color = color1;
-            lockMask.SetActive(true);
         }
         else
         {
-            star.sprite = lightStar;
             statusTitleText.text = UPGRADE_TITLE;
             statusTitleText.color = color2;
-            costText.text = HandleCost(cost);
             costText.color = color2;
-            lockMask.SetActive(false);
         }
 
-        levelFillImg.fillAmount = levelVal / 10f;
     }
 
-    private string HandleCost(int costVal)
+    public void UpgradeHouse(int newLevel)
     {
-        string res = "";
-        int cnt = 0;
-        while (costVal > 0)
+        level = newLevel;
+    }
+
+    public void OnClickIncreaseBtn(int rentStep)
+    {
+        if (!isLocked)
         {
-            if (cnt == 3)
-            {
-                res =  "," + res;
-                cnt = 0;
-            }
-            res = costVal % 10 + res;
-            cnt++;
-            costVal /= 10;
+            rentVal += rentStep;
         }
-        return res;
+    }
+
+    public void OnClickDecreaseBtn(int rentStep)
+    {
+        if (!isLocked)
+        {
+            if (rentVal == 0)
+            {
+                return;
+            }
+            rentVal -= rentStep;    
+        }
     }
 }
