@@ -20,6 +20,7 @@ public class Apartment : MonoBehaviour
     public Sprite floor3;
     public GameObject upgradeEffectPrefab;
     private GameObject effectObj;
+    public AudioSource sound;
 
     public void upgrade() {
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
@@ -29,6 +30,10 @@ public class Apartment : MonoBehaviour
         value = Helper.roundToTen((nxtUpgradeCost/10 + maintFee) * 1.25);
         updateSprite();
         invokeEffect();
+
+        AudioSource goodSound = Instantiate(sound);
+        goodSound.Play();
+        //Destroy(goodSound.gameObject);
 
         if (renter != null)
         {
