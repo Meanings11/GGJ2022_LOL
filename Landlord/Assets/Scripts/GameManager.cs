@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
-        balance = 2000;
+        balance = 1000;
         reputation = 100;
         renterNum = 0;
         // apartments = new List<Apartment>();
