@@ -7,7 +7,9 @@ using UnityEngine.UI;
 //go to next turn, update UI
 public class GameManager : MonoBehaviour { 
 
-   public static GameManager instance; 
+   public static GameManager instance;
+
+   public LosePopup losePopup;
    // Data
    public int balance;
    public int reputation;
@@ -42,6 +44,14 @@ public class GameManager : MonoBehaviour {
             if (apartments[i].renterUpdate()) {
                 renterNum--;
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (balance <= 0)
+        {
+            losePopup.OpenLoseWindow();
         }
     }
 
