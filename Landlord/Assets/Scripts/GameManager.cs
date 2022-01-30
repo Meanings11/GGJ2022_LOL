@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
    public List<Apartment> apartments;
    public List<Renter> renters;
 
+    public GameObject firstHouse;
+
     void Awake() {
         if (instance == null) {
             instance = this;
@@ -30,16 +32,22 @@ public class GameManager : MonoBehaviour {
         reputation = 100;
         apartments = new List<Apartment>();
         renters = new List<Renter>();
+
+        addApartment(firstHouse);
     }
 
     public void enterNewMonth(){
         updateMonthlyBalance();
         updateMonthlyReputation();
+
+        for (int i = 0; i < apartments.Count; i++) {
+            apartments[i].monthUpdate();
+        }
     }
 
     public void updateMonthlyBalance() {
         for (int i = 0; i < apartments.Count; i++) {
-            balance += apartments[i].rent;
+            if (apartments[i].occupied) balance += apartments[i].rent;
             balance -= apartments[i].maintFee;
         }
    }
@@ -63,7 +71,7 @@ public class GameManager : MonoBehaviour {
             new_ap.level++;
             apartments.Add(new_ap); // push to the List
             
-            // balance -= PlayerStats.buildingCost;
+            balance -= PlayerStats.buildingCost;
         }
     }
 }

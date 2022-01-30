@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Apartment : MonoBehaviour
 {
-    public int rent{get;set;}
+    public int rent;
     public int level = 1;
     public int nxtUpgradeCost = 1000;
     public int maintFee = 300;
@@ -28,6 +28,8 @@ public class Apartment : MonoBehaviour
         nxtUpgradeCost = Helper.roundToTen(nxtUpgradeCost*Math.Exp(0.5));
         updateSprite();
         invokeEffect();
+
+        renter.updateExpectedRent(value);
     }
 
     private void updateSprite(){
@@ -40,6 +42,16 @@ public class Apartment : MonoBehaviour
         }
     }
 
+    public void monthUpdate() {
+        if (!occupied) {
+            RenterSpawner.instance.spawn(this);
+        } else {
+            if (renter.checkLeaveOrNot()) {
+                occupied = false;
+            } 
+        }
+    }
+
     public void AddRent(int step)
     {
         if (step < 0 && rent <= 0)
@@ -47,6 +59,7 @@ public class Apartment : MonoBehaviour
             return;
         }
         rent += step;
+        if (occupied) renter.updateHappiness(rent);
     }
 
     private void invokeEffect(){
