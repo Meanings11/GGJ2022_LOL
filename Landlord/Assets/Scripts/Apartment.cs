@@ -25,6 +25,7 @@ public class Apartment : MonoBehaviour
     void Start()
     {
         rent = 0;
+
     }
 
     // Update is called once per frame
