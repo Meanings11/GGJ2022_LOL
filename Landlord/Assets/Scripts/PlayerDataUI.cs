@@ -13,7 +13,7 @@ public class PlayerDataUI : MonoBehaviour
 	{
 		balance.text = Utils.HandleMoney(PlayerStats.balance);
 		reputation.text = PlayerStats.reputation.ToString();
-		propertyCnt.text = PlayerStats.apartments.Length.ToString();
-		renterCnt.text = PlayerStats.renters.Length.ToString();
+		// propertyCnt.text = PlayerStats.apartments.Length.ToString();
+		// renterCnt.text = PlayerStats.renters.Length.ToString();
 	}
 }
