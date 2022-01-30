@@ -37,16 +37,17 @@ public class RenterSpawner : MonoBehaviour
     {
         renter = Instantiate(prefabRenter);
         renter.updateExpectedRent(ap.value);
-
+        renter.updateHappiness(ap.rent);
         int possibility = Random.Range(1, 101);
         double generatePossibility = gameManager.reputation * 0.5 + 
-                                    (double)(renter.expectRent) / ap.rent * 0.5;
+                                    (renter.happiness* 0.5);
         if(possibility<=generatePossibility){
             ap.occupied=true;
             renter.name="Renter_"+nameArray[Random.Range(0, nameArray.Length)];
-            renter.updateHappiness(ap.rent);
+            // renter.updateHappiness(ap.rent);
             ap.renter=renter;
-            gameManager.renters.Add(renter);
+            gameManager.renterNum++;
+            // gameManager.renters.Add(renter);
         }
         else{
             Destroy(renter.gameObject);

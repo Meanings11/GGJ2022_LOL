@@ -42,14 +42,19 @@ public class Apartment : MonoBehaviour
         }
     }
 
-    public void monthUpdate() {
+    public bool renterUpdate() {
         if (!occupied) {
             RenterSpawner.instance.spawn(this);
         } else {
             if (renter.checkLeaveOrNot()) {
+                Debug.Log("left");
                 occupied = false;
+                renter = null;
+                return true;
             } 
         }
+
+        return false;
     }
 
     public void AddRent(int step)

@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour {
    public int reputation;
 
    public List<Apartment> apartments;
-   public List<Renter> renters;
+//    public List<Renter> renters;
+   public int renterNum;
 
     public GameObject firstHouse;
 
@@ -30,8 +31,9 @@ public class GameManager : MonoBehaviour {
     {
         balance = 2000;
         reputation = 100;
+        renterNum = 0;
         apartments = new List<Apartment>();
-        renters = new List<Renter>();
+        // renters = new List<Renter>();
 
         addApartment(firstHouse);
     }
@@ -41,7 +43,9 @@ public class GameManager : MonoBehaviour {
         updateMonthlyReputation();
 
         for (int i = 0; i < apartments.Count; i++) {
-            apartments[i].monthUpdate();
+            if (apartments[i].renterUpdate()) {
+                renterNum--;
+            }
         }
     }
 
@@ -53,14 +57,15 @@ public class GameManager : MonoBehaviour {
    }
 
    public void updateMonthlyReputation() {
-       if (renters.Count ==0 ) return;
+       if (renterNum ==0 ) return;
 
        int temp = 0;
-       for (int i = 0; i < renters.Count; i++) {
-           temp += renters[i].happiness;
+       for (int i = 0; i < apartments.Count; i++) {
+           if (!apartments[i].occupied) continue;
+           temp += apartments[i].renter.happiness;
        }
 
-       reputation = temp/renters.Count > 0 ? temp/renters.Count : 0; 
+       reputation = temp/renterNum > 0 ? temp/renterNum : 0; 
    }
 
     public void addApartment(GameObject house){

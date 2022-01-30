@@ -25,10 +25,11 @@ public class Renter : MonoBehaviour
     public bool checkLeaveOrNot() {
 
         int possibility=Random.Range(1,101);
-        int leavePossibility = (100-happiness)-20;
+        int leavePossibility = 100-happiness+10;
+        Debug.Log(possibility);
         if(possibility<=leavePossibility){
-            return true;
             Destroy(this.gameObject);
+            return true;
         }
 
         return false;
