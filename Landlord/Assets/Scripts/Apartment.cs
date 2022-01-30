@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Apartment : MonoBehaviour
 {
-    public int rent{get;set;}
+    public int rent;
     public int level = 1;
     public int nxtUpgradeCost = 1000;
     public int maintFee = 300;
@@ -18,7 +18,8 @@ public class Apartment : MonoBehaviour
     public Sprite floor1;
     public Sprite floor2;
     public Sprite floor3;
-    public GameObject upgradeEffect;
+    public GameObject upgradeEffectPrefab;
+    private GameObject effectObj;
 
     public void upgrade() {
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
@@ -28,6 +29,11 @@ public class Apartment : MonoBehaviour
         nxtUpgradeCost = Helper.roundToTen(nxtUpgradeCost*Math.Exp(0.5));
         updateSprite();
         invokeEffect();
+
+        if (renter != null)
+        {
+            renter.updateExpectedRent(value);
+        }
     }
 
     private void updateSprite(){
@@ -40,6 +46,21 @@ public class Apartment : MonoBehaviour
         }
     }
 
+    public bool renterUpdate() {
+        if (!occupied) {
+            RenterSpawner.instance.spawn(this);
+        } else {
+            if (renter.checkLeaveOrNot()) {
+                Debug.Log("left");
+                occupied = false;
+                renter = null;
+                return true;
+            } 
+        }
+
+        return false;
+    }
+
     public void AddRent(int step)
     {
         if (step < 0 && rent <= 0)
@@ -47,11 +68,13 @@ public class Apartment : MonoBehaviour
             return;
         }
         rent += step;
+        if (occupied) renter.updateHappiness(rent);
     }
 
-    private void invokeEffect(){
-        upgradeEffect = Instantiate(upgradeEffect);
-        // Destroy(upgradeEffect, 0.5f);
+    public void invokeEffect()
+    {
+        effectObj = Instantiate(upgradeEffectPrefab, transform);
+        Destroy(effectObj, 0.4f);
     }
 
     // Start is called before the first frame update
@@ -60,5 +83,20 @@ public class Apartment : MonoBehaviour
         rent = 0;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         occupied = false;
+    }
+
+    private void OnMouseDown()
+    {
+        GameObject popup = GameObject.FindWithTag("Popup");
+        if (popup != null)
+        {
+            popup.SetActive(true);
+            RenterEvictButton re = popup.GetComponent<RenterEvictButton>();
+            if (renter != null && re != null)
+            {
+                re.Renter = renter.gameObject;
+                re.OpenPopup();
+            }
+        }
     }
 }

@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour {
    public int reputation;
 
    public List<Apartment> apartments;
-   public List<Renter> renters;
+//    public List<Renter> renters;
+   public int renterNum;
+
+    public GameObject firstHouse;
 
     void Awake() {
         if (instance == null) {
@@ -28,31 +31,40 @@ public class GameManager : MonoBehaviour {
     {
         balance = 2000;
         reputation = 100;
+        renterNum = 0;
         apartments = new List<Apartment>();
-        renters = new List<Renter>();
+        // renters = new List<Renter>();
+
     }
 
     public void enterNewMonth(){
         updateMonthlyBalance();
         updateMonthlyReputation();
+
+        for (int i = 0; i < apartments.Count; i++) {
+            if (apartments[i].renterUpdate()) {
+                renterNum--;
+            }
+        }
     }
 
     public void updateMonthlyBalance() {
         for (int i = 0; i < apartments.Count; i++) {
-            balance += apartments[i].rent;
+            if (apartments[i].occupied) balance += apartments[i].rent;
             balance -= apartments[i].maintFee;
         }
    }
 
    public void updateMonthlyReputation() {
-       if (renters.Count ==0 ) return;
+       if (renterNum ==0 ) return;
 
        int temp = 0;
-       for (int i = 0; i < renters.Count; i++) {
-           temp += renters[i].happiness;
+       for (int i = 0; i < apartments.Count; i++) {
+           if (!apartments[i].occupied) continue;
+           temp += apartments[i].renter.happiness;
        }
 
-       reputation = temp/renters.Count > 0 ? temp/renters.Count : 0; 
+       reputation = temp/renterNum > 0 ? temp/renterNum : 0; 
    }
 
     public void addApartment(GameObject house){
@@ -61,9 +73,10 @@ public class GameManager : MonoBehaviour {
             house.SetActive(true);
             Apartment new_ap = house.GetComponent<Apartment>();
             new_ap.level++;
+            new_ap.invokeEffect();
             apartments.Add(new_ap); // push to the List
             
-            // balance -= PlayerStats.buildingCost;
+            balance -= PlayerStats.buildingCost;
         }
     }
 }
