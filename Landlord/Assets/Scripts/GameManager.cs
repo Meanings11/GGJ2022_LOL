@@ -45,15 +45,12 @@ public class GameManager : MonoBehaviour {
                 renterNum--;
             }
         }
-    }
-
-    private void Update()
-    {
         if (balance <= 0)
         {
             losePopup.OpenLoseWindow();
         }
     }
+
 
     public void updateMonthlyBalance() {
         for (int i = 0; i < apartments.Count; i++) {
