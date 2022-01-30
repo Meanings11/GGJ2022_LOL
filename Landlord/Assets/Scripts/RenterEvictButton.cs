@@ -6,6 +6,7 @@ public class RenterEvictButton : MonoBehaviour
 {
     public GameObject EvictDialogUI;
     public GameObject Renter;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,9 @@ public class RenterEvictButton : MonoBehaviour
 
     public void YesOnClick()
     {
-        Destroy(Renter);
+        //Destroy(Renter);
+        EvictDialogUI.SetActive(false);
+        Renter.transform.parent.gameObject.SetActive(false);
     }
 
     public void NoOnClick()
