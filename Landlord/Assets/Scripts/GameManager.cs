@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,14 +9,15 @@ public class GameManager : MonoBehaviour {
 
    public static GameManager instance; 
    // Data
-    public int balance;
+   public int balance;
    public int reputation;
-   
-   public Transform[] housePositions;
-   
+
+   public GameObject[] houses;
+
    public List<Apartment> apartments;
    public List<Renter> renters;
 
+   private int houseCnt = 0;
 
     void Awake() {
         if (instance == null) {
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour {
         apartments = new List<Apartment>();
         renters = new List<Renter>();
     }
-    
+
     public void enterNewMonth(){
         updateMonthlyBalance();
         updateMonthlyReputation();
@@ -58,15 +60,15 @@ public class GameManager : MonoBehaviour {
    }
 
     public void addApartment(){
-        if (balance > PlayerStats.buildingCost) {
-            GameObject gameobj = (GameObject)Instantiate(Resources.Load("building"));
-            Apartment new_ap = gameobj.GetComponent<Apartment>();
-            int index = apartments.Count;
-            new_ap.position = housePositions[index].position;
+        if (balance > PlayerStats.buildingCost)
+        {
+            GameObject house = houses[houseCnt++];
+            house.SetActive(true);
+            Apartment new_ap = house.GetComponent<Apartment>();
             apartments.Add(new_ap); // push to the List
+            
             // balance -= PlayerStats.buildingCost;
         }
-        Debug.Log(apartments.Count);
     }
 
     public void upgradeApartment(int index) {

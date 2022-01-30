@@ -12,7 +12,6 @@ public class Apartment : MonoBehaviour
     public int value = 500;
     public bool occupied = false;
     public Renter renter;
-    public Vector3 position;
 
     SpriteRenderer spriteRenderer;
 
@@ -20,6 +19,7 @@ public class Apartment : MonoBehaviour
     public Sprite floor2;
     public Sprite floor3;
     public GameObject upgradeEffect;
+    
 
     public bool upgrade() {
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
@@ -44,8 +44,7 @@ public class Apartment : MonoBehaviour
     }
 
     public void invokeEffect(){
-        upgradeEffect = Instantiate(upgradeEffect, position, Quaternion.identity);
-
+        upgradeEffect = Instantiate(upgradeEffect);
         // Destroy(upgradeEffect, 0.5f);
     }
 
@@ -55,11 +54,5 @@ public class Apartment : MonoBehaviour
         rent = 0;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         occupied = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
