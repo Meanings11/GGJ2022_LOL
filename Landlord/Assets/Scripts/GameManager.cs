@@ -12,12 +12,8 @@ public class GameManager : MonoBehaviour {
    public int balance;
    public int reputation;
 
-   public GameObject[] houses;
-
    public List<Apartment> apartments;
    public List<Renter> renters;
-
-   private int houseCnt = 0;
 
     void Awake() {
         if (instance == null) {
@@ -59,20 +55,15 @@ public class GameManager : MonoBehaviour {
        reputation = temp/renters.Count > 0 ? temp/renters.Count : 0; 
    }
 
-    public void addApartment(){
+    public void addApartment(GameObject house){
         if (balance > PlayerStats.buildingCost)
         {
-            GameObject house = houses[houseCnt++];
             house.SetActive(true);
             Apartment new_ap = house.GetComponent<Apartment>();
+            new_ap.level++;
             apartments.Add(new_ap); // push to the List
             
             // balance -= PlayerStats.buildingCost;
         }
-    }
-
-    public void upgradeApartment(int index) {
-        apartments[index].upgrade();
-        Debug.Log((apartments.Count));
     }
 }

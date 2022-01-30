@@ -19,21 +19,18 @@ public class Apartment : MonoBehaviour
     public Sprite floor2;
     public Sprite floor3;
     public GameObject upgradeEffect;
-    
 
-    public bool upgrade() {
+    public void upgrade() {
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
-
         level++;
         maintFee = Helper.roundToTen(maintFee*Math.Exp(0.3));
         value = Helper.roundToTen((nxtUpgradeCost/10 + maintFee) * 1.25);
         nxtUpgradeCost = Helper.roundToTen(nxtUpgradeCost*Math.Exp(0.5));
         updateSprite();
         invokeEffect();
-        return true;
     }
 
-    public void updateSprite(){
+    private void updateSprite(){
         if (level == 1) {
             spriteRenderer.sprite = floor1;
         } else if (level ==2) {
@@ -43,7 +40,16 @@ public class Apartment : MonoBehaviour
         }
     }
 
-    public void invokeEffect(){
+    public void AddRent(int step)
+    {
+        if (step < 0 && rent <= 0)
+        {
+            return;
+        }
+        rent += step;
+    }
+
+    private void invokeEffect(){
         upgradeEffect = Instantiate(upgradeEffect);
         // Destroy(upgradeEffect, 0.5f);
     }

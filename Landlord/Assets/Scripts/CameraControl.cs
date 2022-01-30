@@ -28,8 +28,7 @@ public class CameraControl : MonoBehaviour
 		    return;
 	    }
 
-	    float endPos = transform.position.x + scrollStep;
-	    endPos = Mathf.Clamp(endPos, minX, maxX);
+	    float endPos = Mathf.Clamp(transform.position.x + scrollStep, minX, maxX);
 	    gameObject.transform.DOMoveX(endPos, timeDuration);
    }
 }
