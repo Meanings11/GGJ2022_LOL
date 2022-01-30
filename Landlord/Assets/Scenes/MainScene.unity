@@ -20637,7 +20637,6 @@ MonoBehaviour:
   apartments:
   - {fileID: 1882513723}
   renterNum: 0
-  firstHouse: {fileID: 1167136165}
 --- !u!4 &951759665
 Transform:
   m_ObjectHideFlags: 0
@@ -21302,11 +21301,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!1 &1167136165 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7989961138768226576, guid: 928bc8363795b4c478a17deff6510189, type: 3}
-  m_PrefabInstance: {fileID: 1467382495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182566191
 GameObject:
   m_ObjectHideFlags: 0
@@ -22599,7 +22593,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1473064593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b2ba4a149e30946ba02a5117edb0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a709f81070f7a245b9df56c613cfaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1494473146}
@@ -22616,7 +22610,7 @@ Transform:
   m_Children:
   - {fileID: 1494473151}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494473145
 GameObject:
@@ -24857,7 +24851,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -2774966602513775821, guid: 928bc8363795b4c478a17deff6510189, type: 3}
   m_PrefabInstance: {fileID: 1467382495}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167136165}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f480cb57ac06341edaf543093908f41c, type: 3}

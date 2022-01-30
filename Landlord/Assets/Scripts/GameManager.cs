@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour {
 //    public List<Renter> renters;
    public int renterNum;
 
-    public GameObject firstHouse;
-
     void Awake() {
         if (instance == null) {
             instance = this;
@@ -32,9 +30,8 @@ public class GameManager : MonoBehaviour {
         balance = 2000;
         reputation = 100;
         renterNum = 0;
-        apartments = new List<Apartment>();
+        // apartments = new List<Apartment>();
         // renters = new List<Renter>();
-
     }
 
     public void enterNewMonth(){

@@ -40,7 +40,7 @@ public class RenterEvictButton : MonoBehaviour
     public void EvictOnClick()
     {
         CloseWindow(selfCanvasGroup);
-        PopupWindow(confirmationCanvasGroup);
+        // PopupWindow(confirmationCanvasGroup);
     }
 
     void CloseWindow(CanvasGroup cg)
