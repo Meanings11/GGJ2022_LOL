@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //go to next turn, update UI
 public class GameManager : MonoBehaviour { 
 
-   public static GameManager instance;
+   public static GameManager instance; 
+   // Data
+    public int balance;
+   public int reputation;
    
    public Transform[] housePositions;
    
@@ -24,16 +28,21 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
-        PlayerStats.balance = 2000;
-        PlayerStats.reputation = 100;
+        balance = 2000;
+        reputation = 100;
         apartments = new List<Apartment>();
         renters = new List<Renter>();
-
+    }
+    
+    public void enterNewMonth(){
+        updateMonthlyBalance();
+        updateMonthlyReputation();
     }
 
     public void updateMonthlyBalance() {
         for (int i = 0; i < apartments.Count; i++) {
-            PlayerStats.balance += apartments[i].rent;
+            balance += apartments[i].rent;
+            balance -= apartments[i].maintFee;
         }
    }
 
@@ -45,17 +54,17 @@ public class GameManager : MonoBehaviour {
            temp += renters[i].happiness;
        }
 
-       PlayerStats.reputation = temp/renters.Count > 0 ? temp/renters.Count : 0; 
+       reputation = temp/renters.Count > 0 ? temp/renters.Count : 0; 
    }
 
     public void addApartment(){
-        if (PlayerStats.balance > PlayerStats.buildingCost) {
+        if (balance > PlayerStats.buildingCost) {
             GameObject gameobj = (GameObject)Instantiate(Resources.Load("building"));
             Apartment new_ap = gameobj.GetComponent<Apartment>();
             int index = apartments.Count;
             new_ap.position = housePositions[index].position;
             apartments.Add(new_ap); // push to the List
-            // PlayerStats.balance -= PlayerStats.buildingCost;
+            // balance -= PlayerStats.buildingCost;
         }
         Debug.Log(apartments.Count);
     }

@@ -11,6 +11,8 @@ public class CalenderTimer : MonoBehaviour
 
 	private int oldMonth = 1;
 
+	public float timespeed = 0.1f;
+
 	private void Start()
 	{
 		ChangeDay(month);
@@ -24,10 +26,14 @@ public class CalenderTimer : MonoBehaviour
 		if (fillImage.fillAmount == 1f)
 		{
 			fillImage.fillAmount = 0f;
+
+			month++;
+			if (month == 13) month = 1;
+			GameManager.instance.enterNewMonth();
 		}
 		else
 		{
-			fillImage.fillAmount += Time.deltaTime * 0.1f;
+			fillImage.fillAmount += Time.deltaTime * timespeed;
 		}
 		if (month != oldMonth)
 		{
