@@ -10,6 +10,8 @@ public class Apartment : MonoBehaviour
     public int nxtUpgradeCost = 1000;
     public int maintFee = 300;
     public int value = 500;
+    public bool occupied = false;
+    public Renter renter;
 
     public bool upgrade() {
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
@@ -25,7 +27,7 @@ public class Apartment : MonoBehaviour
     void Start()
     {
         rent = 0;
-
+        occupied = false;
     }
 
     // Update is called once per frame
