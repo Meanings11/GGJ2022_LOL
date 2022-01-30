@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
 
     public void addApartment(){
         if (PlayerStats.balance > PlayerStats.buildingCost) {
-            GameObject gameobj = (GameObject)Instantiate(Resources.Load("ap_obj"));
+            GameObject gameobj = (GameObject)Instantiate(Resources.Load("building"));
             Apartment new_ap = gameobj.GetComponent<Apartment>();
             apartments.Add(new_ap); // push to the List
             // PlayerStats.balance -= PlayerStats.buildingCost;
