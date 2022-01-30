@@ -18,7 +18,8 @@ public class Apartment : MonoBehaviour
     public Sprite floor1;
     public Sprite floor2;
     public Sprite floor3;
-    public GameObject upgradeEffect;
+    public GameObject upgradeEffectPrefab;
+    private GameObject effectObj;
 
     public void upgrade() {
         // if (PlayerStats.balance < nxtUpgradeCost) return false;
@@ -49,9 +50,10 @@ public class Apartment : MonoBehaviour
         rent += step;
     }
 
-    private void invokeEffect(){
-        upgradeEffect = Instantiate(upgradeEffect);
-        // Destroy(upgradeEffect, 0.5f);
+    public void invokeEffect()
+    {
+        effectObj = Instantiate(upgradeEffectPrefab, transform);
+        Destroy(effectObj, 0.4f);
     }
 
     // Start is called before the first frame update

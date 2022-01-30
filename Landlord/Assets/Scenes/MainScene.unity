@@ -20558,7 +20558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balance: 0
   reputation: 0
-  popup: {fileID: 729205778}
   apartments: []
   renters: []
 --- !u!4 &951759665
@@ -22293,18 +22292,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1361422275}
     m_Modifications:
-    - target: {fileID: -2424107765840900423, guid: 928bc8363795b4c478a17deff6510189, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2424107765840900423, guid: 928bc8363795b4c478a17deff6510189, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -2424107765840900423, guid: 928bc8363795b4c478a17deff6510189, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 268801376291979432, guid: 928bc8363795b4c478a17deff6510189, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -22352,10 +22339,6 @@ PrefabInstance:
     - target: {fileID: 7989961138768226576, guid: 928bc8363795b4c478a17deff6510189, type: 3}
       propertyPath: m_Name
       value: building
-      objectReference: {fileID: 0}
-    - target: {fileID: 7989961138768226576, guid: 928bc8363795b4c478a17deff6510189, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928bc8363795b4c478a17deff6510189, type: 3}

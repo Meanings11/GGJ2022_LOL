@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
             house.SetActive(true);
             Apartment new_ap = house.GetComponent<Apartment>();
             new_ap.level++;
+            new_ap.invokeEffect();
             apartments.Add(new_ap); // push to the List
             
             // balance -= PlayerStats.buildingCost;
