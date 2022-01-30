@@ -20543,6 +20543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c748cfb981577423ebb3db44a9eacf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renterPopup: {fileID: 729205778}
   losePopup: {fileID: 1235620713}
   balance: 0
   reputation: 0

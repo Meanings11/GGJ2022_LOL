@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 
    public static GameManager instance;
 
+   public GameObject renterPopup;
+
    public LosePopup losePopup;
    // Data
    public int balance;
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour {
         }
         if (balance <= 0)
         {
+            renterPopup.SetActive(false);
             losePopup.OpenLoseWindow();
         }
     }
