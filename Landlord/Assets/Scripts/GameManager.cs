@@ -53,12 +53,17 @@ public class GameManager : MonoBehaviour {
    }
 
     public void addApartment(){
-        // if (PlayerStats.balance > PlayerStats.buildingCost) {
+        if (PlayerStats.balance > PlayerStats.buildingCost) {
             GameObject gameobj = (GameObject)Instantiate(Resources.Load("ap_obj"));
             Apartment new_ap = gameobj.GetComponent<Apartment>();
             apartments.Add(new_ap); // push to the List
-            PlayerStats.balance -= PlayerStats.buildingCost;
-        // }
+            // PlayerStats.balance -= PlayerStats.buildingCost;
+        }
         Debug.Log(apartments.Count);
+    }
+
+    public void upgradeApartment(int index) {
+        apartments[index].upgrade();
+        Debug.Log((apartments.Count));
     }
 }

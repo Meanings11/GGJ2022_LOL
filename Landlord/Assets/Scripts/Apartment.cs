@@ -12,12 +12,12 @@ public class Apartment : MonoBehaviour
     public int value = 500;
 
     public bool upgrade() {
-        if (PlayerStats.balance < nxtUpgradeCost) return false;
+        // if (PlayerStats.balance < nxtUpgradeCost) return false;
 
         level++;
-        maintFee = (int)Math.Round(maintFee*Math.Exp(0.3));
-        value = (int)Math.Round((nxtUpgradeCost/10 + maintFee) * 1.25);
-        nxtUpgradeCost = (int)Math.Round(Math.Exp(0.5));
+        maintFee = Helper.roundToTen(maintFee*Math.Exp(0.3));
+        value = Helper.roundToTen((nxtUpgradeCost/10 + maintFee) * 1.25);
+        nxtUpgradeCost = Helper.roundToTen(nxtUpgradeCost*Math.Exp(0.5));
         return true;
     }
 
