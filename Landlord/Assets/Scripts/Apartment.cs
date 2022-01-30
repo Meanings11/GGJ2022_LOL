@@ -12,6 +12,7 @@ public class Apartment : MonoBehaviour
     public int value = 500;
     public bool occupied = false;
     public Renter renter;
+    public Vector3 position;
 
     SpriteRenderer spriteRenderer;
 
@@ -43,7 +44,7 @@ public class Apartment : MonoBehaviour
     }
 
     public void invokeEffect(){
-        upgradeEffect = Instantiate(upgradeEffect);
+        upgradeEffect = Instantiate(upgradeEffect, position, Quaternion.identity);
 
         // Destroy(upgradeEffect, 0.5f);
     }

@@ -5,7 +5,10 @@ using UnityEngine;
 //go to next turn, update UI
 public class GameManager : MonoBehaviour { 
 
-   public static GameManager instance; 
+   public static GameManager instance;
+   
+   public Transform[] housePositions;
+   
    public List<Apartment> apartments;
    public List<Renter> renters;
 
@@ -19,7 +22,6 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         PlayerStats.balance = 2000;
@@ -27,12 +29,6 @@ public class GameManager : MonoBehaviour {
         apartments = new List<Apartment>();
         renters = new List<Renter>();
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void updateMonthlyBalance() {
@@ -56,6 +52,8 @@ public class GameManager : MonoBehaviour {
         if (PlayerStats.balance > PlayerStats.buildingCost) {
             GameObject gameobj = (GameObject)Instantiate(Resources.Load("building"));
             Apartment new_ap = gameobj.GetComponent<Apartment>();
+            int index = apartments.Count;
+            new_ap.position = housePositions[index].position;
             apartments.Add(new_ap); // push to the List
             // PlayerStats.balance -= PlayerStats.buildingCost;
         }
