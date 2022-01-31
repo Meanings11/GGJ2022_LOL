@@ -11101,7 +11101,7 @@ GameObject:
   - component: {fileID: 696970097}
   - component: {fileID: 696970099}
   - component: {fileID: 696970098}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21352,7 +21352,7 @@ GameObject:
   - component: {fileID: 1235620715}
   - component: {fileID: 1235620714}
   - component: {fileID: 1235620713}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: LosePopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21927,7 +21927,7 @@ GameObject:
   - component: {fileID: 1341667164}
   - component: {fileID: 1341667163}
   - component: {fileID: 1341667165}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22339,7 +22339,7 @@ GameObject:
   - component: {fileID: 1399347053}
   - component: {fileID: 1399347055}
   - component: {fileID: 1399347054}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23968,7 +23968,7 @@ GameObject:
   - component: {fileID: 1643976881}
   - component: {fileID: 1643976883}
   - component: {fileID: 1643976882}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
