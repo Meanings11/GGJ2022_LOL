@@ -37,5 +37,6 @@ public class RenterEvictButton : MonoBehaviour
         selfCanvasGroup.interactable = false;
         selfCanvasGroup.alpha = 0;
         mask.color = new Color(0f, 0f, 0f, 0f);
+        selfCanvasGroup.gameObject.SetActive(false);
     }
 }
