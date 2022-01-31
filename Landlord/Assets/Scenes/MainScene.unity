@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 352935113}
   - component: {fileID: 352935115}
   - component: {fileID: 352935114}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: FadeOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20491,7 +20491,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -1418152343
+  m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &911719825
@@ -21575,7 +21575,7 @@ GameObject:
   - component: {fileID: 1269589907}
   - component: {fileID: 1269589909}
   - component: {fileID: 1269589908}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: sky_bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22630,7 +22630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473064595}
   - component: {fileID: 1473064594}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SwitchScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22679,7 +22679,7 @@ GameObject:
   - component: {fileID: 1494473148}
   - component: {fileID: 1494473147}
   - component: {fileID: 1494473146}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: FadeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
